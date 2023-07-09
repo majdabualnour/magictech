@@ -2,11 +2,11 @@ from flask import Flask, redirect, url_for, request,render_template , session
 from firebase_admin import firestore
 from flask_jwt_extended import jwt_required
 import datafire
-app = Flask(__name__)
+appf = Flask(__name__)
 
-app.secret_key = 'thetopsecretmajd1234'
+appf.secret_key = 'thetopsecretmajd1234'
 db = firestore.client()
-@app.route('/')
+@appf.route('/')
 def home():
    user_agent = request.headers.get('User-Agent')
 
@@ -35,12 +35,12 @@ def home():
    return render_template("home.html")
 
 
-@app.route('/about')
+@appf.route('/about')
 def about():
    return render_template("about.html")
 
 
-@app.route('/orders',methods = ['POST', 'GET'])
+@appf.route('/orders',methods = ['POST', 'GET'])
 def orderss():
    if request.method == 'POST':
       search = request.form['search']
@@ -54,7 +54,7 @@ def orderss():
 
    return render_template("orders.html" , image_url = img , data = data )
    return render_template("about.html")
-@app.route('/doneprojects',methods = ['POST', 'GET'])
+@appf.route('/doneprojects',methods = ['POST', 'GET'])
 def done():
    if request.method == 'POST':
       search = request.form['search']
@@ -67,15 +67,15 @@ def done():
 
 
    return render_template("donepro.html" , image_url = img , data = data )
-@app.route('/services')
+@appf.route('/services')
 def services():
    return render_template("services.html")
 
 
-@app.route('/our_projects')
+@appf.route('/our_projects')
 def ourpro():
    return render_template("our_projects.html")
-@app.route('/admins/<use>')
+@appf.route('/admins/<use>')
 def admins(use):
    if 'username' in session:
       img = session.get('avatar')
@@ -109,7 +109,7 @@ def admins(use):
 # @app.route('/addadmin')
 # def addadmin():
 #    return render_template("addadmin.html")
-@app.route('/code/<use>')
+@appf.route('/code/<use>')
 def code(use):
    
    data = datafire.getallorderss(use)
@@ -117,7 +117,7 @@ def code(use):
    if data != []:
       return render_template("getcode.html" , data = data )
    return render_template("home.html")
-@app.route('/codea/<use>')
+@appf.route('/codea/<use>')
 def codea(use):
    
    data = datafire.getallorderss(use)
@@ -127,11 +127,11 @@ def codea(use):
    return render_template("ffas.html" , data = data )
 
    
-@app.route('/false')
+@appf.route('/false')
 def false():
    return f'failed to find your acount '
 
-@app.route('/addadmin',methods = ['POST', 'GET'])
+@appf.route('/addadmin',methods = ['POST', 'GET'])
 def addadmin():
    if 'username' in session:
       
@@ -169,7 +169,7 @@ def addadmin():
    #    else:
    #       return redirect(url_for('admins', use = user ))
    return render_template("addadmin.html")
-@app.route('/codeg',methods = ['POST', 'GET'])
+@appf.route('/codeg',methods = ['POST', 'GET'])
 def codeg():
    if request.method == 'POST':
       
@@ -178,7 +178,7 @@ def codeg():
       return  redirect(url_for('code', use = name ))
    else:
       return render_template('home.html')
-@app.route('/save',methods = ['POST', 'GET'])
+@appf.route('/save',methods = ['POST', 'GET'])
 def codes():
    if request.method == 'POST':
       countd = session.get('proname')
@@ -187,7 +187,7 @@ def codes():
       dead = request.form['dead']
       datafire.update(name, dead,countd[0][3])
       return  redirect(url_for('codea', use = countd[0][6] ))
-@app.route('/done',methods = ['POST', 'GET'])
+@appf.route('/done',methods = ['POST', 'GET'])
 def donde():
    if request.method == 'POST':
       countd = session.get('proname')
@@ -195,7 +195,7 @@ def donde():
       datafire.done('Done', countd[0][3])
       return  redirect(url_for('codea', use = countd[0][6] ))
    
-@app.route('/contact',methods = ['POST', 'GET'])
+@appf.route('/contact',methods = ['POST', 'GET'])
 def start():
    if request.method == 'POST':
       
@@ -219,7 +219,7 @@ def start():
       print(m)
       return render_template("contact.html" , dates =m )
 
-@app.route('/login',methods = ['POST', 'GET'])
+@appf.route('/login',methods = ['POST', 'GET'])
 def login():
    if request.method == 'POST':
       user = request.form['email']
@@ -250,7 +250,7 @@ def login():
    #       return redirect(url_for('admins', use = user ))
    return render_template("login.html")
 
-@app.route('/searchusers', methods=['GET', 'POST'])
+@appf.route('/searchusers', methods=['GET', 'POST'])
 def searchusers():
    if request.method == 'POST':
       search = request.form['search']
@@ -260,7 +260,7 @@ def searchusers():
    return render_template("searchusers.html" ,  data = data)
 
 
-@app.route('/logout')
+@appf.route('/logout')
 def logout():
     session.pop('username', None)
     return redirect(url_for('login'))
@@ -274,4 +274,4 @@ def logout():
 
 
 if __name__ == '__main__':
-   app.run(debug = True)
+   appf.run(debug = True)
