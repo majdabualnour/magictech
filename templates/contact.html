@@ -253,6 +253,7 @@
       </div>
       <div class="row">
 
+
         <div class="col-md-3">
           <div class="info_contact">
             <h5>
@@ -260,7 +261,7 @@
             </h5>
             <div>
               <div class="img-box">
-                <img src="images/location-white.png" width="18px" alt="">
+                <img src="{{ url_for('static', filename='images/location-white.png') }}" width="18px" alt="">
               </div>
               <p>
                 Palestine
@@ -268,7 +269,7 @@
             </div>
             <div>
               <div class="img-box">
-                <img src="images/telephone-white.png" width="12px" alt="">
+                <img src="{{ url_for('static', filename='images/telephone-white.png') }}" width="12px" alt="">
               </div>
               <p>
                 +01 1234567890
@@ -276,7 +277,7 @@
             </div>
             <div>
               <div class="img-box">
-                <img src="images/envelope-white.png" width="18px" alt="">
+                <img src="{{ url_for('static', filename='images/envelope-white.png') }}" width="18px" alt="">
               </div>
               <p>
                 demo@gmail.com
@@ -346,8 +347,8 @@
             <h5>
               Check Calendar
             </h5>
-            <form action="">
-              <input type="email" placeholder="Enter your email">
+            <form action="/codeg" , method="post">
+              <input type="text" name="code" placeholder="Enter your code">
               <button>
                 Check
               </button>

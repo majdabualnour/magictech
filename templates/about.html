@@ -141,137 +141,137 @@
   <!-- end about section -->
 
 
-  <!-- info section -->
-  <section class="info_section layout_padding2">
-    <div class="container">
-      <div class="info_logo">
-        <h2>
-          MAGICTECH
-        </h2>
-      </div>
-      <div class="row">
+ <!-- info section -->
+ <section class="info_section layout_padding2">
+  <div class="container">
+    <div class="info_logo">
+      <h2>
+        MAGICTECH
+      </h2>
+    </div>
+    <div class="row">
 
-        <div class="col-md-3">
-          <div class="info_contact">
-            <h5>
-              About Us
-            </h5>
-            <div>
-              <div class="img-box">
-                <img src="images/location-white.png" width="18px" alt="">
-              </div>
-              <p>
-                Palestine
-              </p>
+
+      <div class="col-md-3">
+        <div class="info_contact">
+          <h5>
+            About Us
+          </h5>
+          <div>
+            <div class="img-box">
+              <img src="{{ url_for('static', filename='images/location-white.png') }}" width="18px" alt="">
             </div>
-            <div>
-              <div class="img-box">
-                <img src="images/telephone-white.png" width="12px" alt="">
-              </div>
-              <p>
-                +01 1234567890
-              </p>
-            </div>
-            <div>
-              <div class="img-box">
-                <img src="images/envelope-white.png" width="18px" alt="">
-              </div>
-              <p>
-                demo@gmail.com
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_info">
-            <h5>
-              Informations
-            </h5>
             <p>
-              Welcome to our company, a leading provider of comprehensive services specializing in website development, AI projects, and mobile app solutions.
+              Palestine
+            </p>
+          </div>
+          <div>
+            <div class="img-box">
+              <img src="{{ url_for('static', filename='images/telephone-white.png') }}" width="12px" alt="">
+            </div>
+            <p>
+              +01 1234567890
+            </p>
+          </div>
+          <div>
+            <div class="img-box">
+              <img src="{{ url_for('static', filename='images/envelope-white.png') }}" width="18px" alt="">
+            </div>
+            <p>
+              demo@gmail.com
             </p>
           </div>
         </div>
+      </div>
+      <div class="col-md-3">
+        <div class="info_info">
+          <h5>
+            Informations
+          </h5>
+          <p>
+            Welcome to our company, a leading provider of comprehensive services specializing in website development, AI projects, and mobile app solutions.
+          </p>
+        </div>
+      </div>
 
-        <div class="col-md-3">
-          <div class="info_insta">
-            <h5>
-              Instagram
-            </h5>
-            <div class="insta_container">
-              <div>
-                <a href="">
-                  <div class="insta-box b-1">
-                    <img src="images/i-1.jpg" alt="">
-                  </div>
-                </a>
-                <a href="">
-                  <div class="insta-box b-2">
-                    <img src="images/i-2.jpg" alt="">
-                  </div>
-                </a>
-              </div>
+      <div class="col-md-3">
+        <div class="info_insta">
+          <h5>
+            Instagram
+          </h5>
+          <div class="insta_container">
+            <div>
+              <a href="">
+                <div class="insta-box b-1">
+                  <img src="images/i-1.jpg" alt="">
+                </div>
+              </a>
+              <a href="">
+                <div class="insta-box b-2">
+                  <img src="images/i-2.jpg" alt="">
+                </div>
+              </a>
+            </div>
 
-              <div>
-                <a href="">
-                  <div class="insta-box b-3">
-                    <img src="images/i-3.jpg" alt="">
-                  </div>
-                </a>
-                <a href="">
-                  <div class="insta-box b-4">
-                    <img src="images/i-4.jpg" alt="">
-                  </div>
-                </a>
-              </div>
-              <div>
-                <a href="">
-                  <div class="insta-box b-3">
-                    <img src="images/i-5.jpg" alt="">
-                  </div>
-                </a>
-                <a href="">
-                  <div class="insta-box b-4">
-                    <img src="images/i-6.jpg" alt="">
-                  </div>
-                </a>
-              </div>
+            <div>
+              <a href="">
+                <div class="insta-box b-3">
+                  <img src="images/i-3.jpg" alt="">
+                </div>
+              </a>
+              <a href="">
+                <div class="insta-box b-4">
+                  <img src="images/i-4.jpg" alt="">
+                </div>
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <div class="insta-box b-3">
+                  <img src="images/i-5.jpg" alt="">
+                </div>
+              </a>
+              <a href="">
+                <div class="insta-box b-4">
+                  <img src="images/i-6.jpg" alt="">
+                </div>
+              </a>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="info_form ">
-            <h5>
-              Check Calendar
-            </h5>
-            <form action="">
-              <input type="email" placeholder="Enter your email">
-              <button>
-                Check
-              </button>
-            </form>
-            <div class="social_box">
-              <a href="">
-                <img src="images/fb.png" alt="">
-              </a>
-              <a href="">
-                <img src="images/twitter.png" alt="">
-              </a>
-              <a href="">
-                <img src="images/linkedin.png" alt="">
-              </a>
-              <a href="">
-                <img src="images/youtube.png" alt="">
-              </a>
-            </div>
+      </div>
+      <div class="col-md-3">
+        <div class="info_form ">
+          <h5>
+            Check Calendar
+          </h5>
+          <form action="/codeg" , method="post">
+            <input type="text" name="code" placeholder="Enter your code">
+            <button>
+              Check
+            </button>
+          </form>
+          <div class="social_box">
+            <a href="">
+              <img src="images/fb.png" alt="">
+            </a>
+            <a href="">
+              <img src="images/twitter.png" alt="">
+            </a>
+            <a href="">
+              <img src="images/linkedin.png" alt="">
+            </a>
+            <a href="">
+              <img src="images/youtube.png" alt="">
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- end info_section -->
-
+<!-- end info_section -->
 
  
 
