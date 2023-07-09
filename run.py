@@ -1,2 +1,2 @@
-from myapp import createapp
-app = createapp()
+from myapp import app
+app = app()
